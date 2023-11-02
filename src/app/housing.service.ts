@@ -9,15 +9,19 @@ export class HousingService {
 
   constructor() { }
 
-  getAllHousingLocations(): Housinglocation[] {
+  public getAllHousingLocations(): Housinglocation[] {
     return this.housingLocationList
   }
 
-  getHousingLocationById(id: number): Housinglocation | undefined {
+  public getHousingLocationById(id: number): Housinglocation | undefined {
     return this.housingLocationList.find(housingLocation => housingLocation.id === id);
   }
 
-  housingLocationList: Housinglocation[] = [
+  public submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
+  }
+
+  private housingLocationList: Housinglocation[] = [
     {
       id: 0,
       name: 'Acme Fresh Start Housing',
